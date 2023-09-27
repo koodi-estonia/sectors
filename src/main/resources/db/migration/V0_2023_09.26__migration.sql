@@ -1,7 +1,9 @@
 create table if not exists "user"
 (
-    id   bigserial primary key not null,
-    name varchar(128)          not null
+    id         bigserial primary key not null,
+    name       varchar(128)          not null,
+    session_id varchar(64)           not null unique,
+    is_consent bool                  not null default false
 );
 
 create table if not exists "sector"
